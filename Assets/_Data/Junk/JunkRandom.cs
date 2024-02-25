@@ -26,7 +26,8 @@ public class JunkRandom : KaisMonoBehaviour
 
     protected virtual void JunkSpawning()
     {
-        this.junkCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, transform.position, transform.rotation);
+        Transform ran = this.junkCtrl.JunkSpawnPoints.GetRandom();
+        this.junkCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, ran.position, transform.rotation);
         Invoke(nameof(this.JunkSpawning), 1f);
     }
 }

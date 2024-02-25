@@ -18,6 +18,10 @@ public class KaisMonoBehaviour : MonoBehaviour
     {
         // For override
     }
+    protected virtual void OnEnable()
+    {
+        // For override
+    }
     protected virtual void LoadComponents()
     {
         // For override

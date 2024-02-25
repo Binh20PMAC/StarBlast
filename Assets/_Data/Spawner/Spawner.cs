@@ -60,6 +60,7 @@ public abstract class Spawner : KaisMonoBehaviour
             }
         }
         Transform newPrefab = Instantiate(prefab);
+        newPrefab.gameObject.SetActive(true);
         return newPrefab;
     }
     public virtual Transform GetPrefabByName(string prefabName)
