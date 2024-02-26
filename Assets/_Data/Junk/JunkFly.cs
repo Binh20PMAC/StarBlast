@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class JunkFly : ParentFly
 {
+    [SerializeField] protected float minCamPos = -16f;
+    [SerializeField] protected float maxCamPos = 16f;
     protected override void ResetValue()
     {
         base.ResetValue();
         this.moveSpeed = 0.5f;
     }
 
-    protected override void OnEnable()
+    protected override void Start()
     {
-        base.OnEnable();
+        base.Start();
         this.GetFlyDirection();
     }
-
+ 
     protected virtual void GetFlyDirection()
     {
         Vector3 camPos = GameCtrl.Instance.MainCamera.transform.position;
         Vector3 objPos = transform.parent.position;
+        camPos.x += Random.Range(this.minCamPos, this.maxCamPos);
+        camPos.z += Random.Range(this.minCamPos, this.maxCamPos);
 
         Vector3 diff = camPos - objPos;
         diff.Normalize();

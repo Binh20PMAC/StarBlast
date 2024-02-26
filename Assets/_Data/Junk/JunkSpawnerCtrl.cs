@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkCtrl : KaisMonoBehaviour
+public class JunkSpawnerCtrl : KaisMonoBehaviour
 {
     [SerializeField] protected JunkSpawner junkSpawner;
     public JunkSpawner JunkSpawner { get => junkSpawner; }
